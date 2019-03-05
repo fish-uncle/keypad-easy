@@ -67,7 +67,12 @@ class Demo extends React.Component {
   |keys|键盘9宫格布局|Array|[[1, 2, 3], [4, 5, 6], [7, 8, 9], ['', 0, 'backspace']]|
   |maxLength|键盘当前输入框的最长字段|Boolean/Number|false|
   |name|键盘当前输入框的name,类似于input的name属性|String|'default'|
-
+  |needPadding|键盘底部兼容自动添加paddingBottom|Boolean|true|
+  ```
+  KeypadEasy.init({
+    title:'xx安全键盘'
+  })
+  ```
 * onChange
 
   键盘输入值变化回调
@@ -91,20 +96,23 @@ class Demo extends React.Component {
 
   九宫格唤起回调
   ```
-  KeypadEasy.onShow = _ => {
-    
+  KeypadEasy.onShow = name => {
+    // 类似于input的name属性
   };
   ```
   
 * onHide
   九宫格隐藏回调
   ```
-  KeypadEasy.onHide = _ => {
-    
+  KeypadEasy.onHide = name => {
+    // 类似于input的name属性
   };
   ```
   
 ### 效果展示
 ![doc](https://user-images.githubusercontent.com/47963826/53787066-928e9300-3f58-11e9-967a-9e35253708be.png)
 
+### 注意
 
+手机唤起假键盘时，如输入区域位于底部，插件会自动添加一个等同键盘高度的 paddingBottom
+如需滚动到最底部可通过，onShow 实现

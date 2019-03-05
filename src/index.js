@@ -14,6 +14,7 @@ class KeypadEasy extends Component {
     keys: [[1, 2, 3], [4, 5, 6], [7, 8, 9], ['', 0, 'backspace']],
     maxLength: false,
     name: 'default',
+    needPadding: true,
     value: {
       default: ''
     },
@@ -48,14 +49,19 @@ class KeypadEasy extends Component {
     options.maxLength ? obj.maxLength = options.maxLength : void 0;
     options.show ? obj.show = options.show : void 0;
     options.name ? obj.name = options.name : void 0;
+    options.needPadding ? obj.needPadding = options.needPadding : void 0;
     this.setState(obj)
   };
 
   show = (name = 'default', options) => {
-    let {value} = this.state;
+    let {value, needPadding} = this.state;
     value[name] ? void 0 : value[name] = '';
     this.setState({value, name, show: true}, _ => {
-      this.onShow();
+      this.onShow(name);
+      if (needPadding) {
+        const paddingOffset = document.getElementsByClassName('keypad')[0].offsetHeight;
+        document.body.style.paddingBottom = paddingOffset + 'px';
+      }
     });
     if (options) {
       this.init(options);
@@ -63,8 +69,12 @@ class KeypadEasy extends Component {
   };
 
   hide = _ => {
+    const {needPadding, name} = this.state;
     this.setState({show: false}, _ => {
-      this.onHide();
+      this.onHide(name);
+      if (needPadding) {
+        document.body.style.paddingBottom = 0;
+      }
     });
   };
 
