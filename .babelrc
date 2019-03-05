@@ -1,0 +1,15 @@
+{
+  "presets": [
+    [
+      "env", {
+      "useBuiltIns": "usage"
+    }
+    ],
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    "transform-runtime"
+  ],
+  "comments": false
+}

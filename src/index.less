@@ -1,0 +1,84 @@
+.keypad {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  border-top: 1PX solid #EFEFEF;
+  color: #666666;
+  transition: all ease-in-out .3s;
+  box-sizing: border-box;
+
+  &.keypad-hide {
+    transform: translateY(100%);
+    pointer-events: none;
+  }
+
+  &.keypad-show {
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .keypad-header {
+    background-color: #ffffff;
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: row;
+    font-size: 28px;
+    line-height: 52px;
+  }
+
+  .keypad-header-safe {
+    width: 32px;
+    margin-right: 18px;
+    background-image: url('./safe.png');
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .keypad-header-title {
+    margin-right: auto;
+  }
+
+  .keypad-header-message {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    padding: 15px 30px;
+    left: 0;
+    top: 0;
+    color: #999;
+  }
+
+  .keypad-header-close {
+    width: 50px;
+    height: 52px;
+    background-image: url('./close-pad.png');
+    background-repeat: no-repeat;
+    background-size: 50px 52px;
+    position: relative;
+
+    &.left {
+      background-position: left center;
+    }
+
+    &.right {
+      background-position: right center;
+    }
+  }
+
+  .keypad-content {
+    background-color: rgba(223, 226, 233, 0.90);
+    overflow: hidden;
+  }
+
+  .keypad-content-line {
+    margin-bottom: 12px;
+    display: flex;
+
+    &:first-of-type {
+      margin-top: 12px;
+    }
+  }
+}

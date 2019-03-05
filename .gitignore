@@ -1,0 +1,10 @@
+# IDEA Config
+/.idea/
+
+# node_modules
+/node_modules/
+npm-debug.log
+yarn-error.log
+
+# mac
+/.DS_Store/

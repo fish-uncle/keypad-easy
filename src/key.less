@@ -1,0 +1,32 @@
+.keypad {
+  .keypad-content-key-value {
+    background-color: #ffffff;
+    box-shadow: 0 1px 0 0 #848688;
+
+    &:active {
+      background-color: #AFB0BE;
+    }
+  }
+
+  .keypad-key-backspace {
+    width: 52px;
+  }
+
+  .keypad-content-key-item {
+    font-family: "PingFang SC", "Heiti SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    flex: 1;
+    user-select: none;
+    text-align: center;
+    border-radius: 10px;
+    width: 0;
+    margin-right: 12px;
+    font-size: 50px;
+    color: #000000;
+    height: 92px;
+    line-height: 92px;
+
+    &:first-child {
+      margin-left: 12px;
+    }
+  }
+}
