@@ -1,10 +1,13 @@
 import React, {Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import './index.less';
-import './key.less';
 
 const backspaceImg = require('./backspace.png');
 const defaultFunction = _ => {
+};
+
+let value = {
+  default: ''
 };
 
 class KeypadEasy extends Component {
@@ -14,10 +17,7 @@ class KeypadEasy extends Component {
     keys: [[1, 2, 3], [4, 5, 6], [7, 8, 9], ['', 0, 'backspace']],
     maxLength: false,
     name: 'default',
-    needPadding: true,
-    value: {
-      default: ''
-    },
+    needPadding: true
   };
 
   onChange = defaultFunction;
@@ -54,7 +54,7 @@ class KeypadEasy extends Component {
   };
 
   show = (name = 'default', options) => {
-    let {value, needPadding} = this.state;
+    let {needPadding} = this.state;
     value[name] ? void 0 : value[name] = '';
     this.setState({value, name, show: true}, _ => {
       this.onShow(name);
@@ -78,28 +78,25 @@ class KeypadEasy extends Component {
     });
   };
 
-  clearValue() {
-    const content = '';
-    this.setState({content});
+  clearValue(name) {
+    value[name] = '';
     this.onChange(value);
   };
 
   insertValue = val => {
-    let {value, name, maxLength} = this.state;
+    let {name, maxLength} = this.state;
     if (maxLength) {
       if (value[name].length >= maxLength) {
         return false;
       }
     }
     value[name] = value[name] + val;
-    this.setState({value});
     this.onChange(value);
   };
 
   deleteValue = _ => {
-    let {value, name} = this.state;
+    let {name} = this.state;
     value[name] = value[name].slice(0, value[name].length - 1);
-    this.setState({value});
     this.onChange(value);
   };
 
