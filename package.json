@@ -1,6 +1,6 @@
 {
   "name": "keypad-easy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react 数字小键盘 组件",
   "main": "dist/index.js",
   "scripts": {

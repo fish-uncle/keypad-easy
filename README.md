@@ -9,7 +9,7 @@ npm install keypad-easy --save
 
 ### 使用说明
 ```javascript
-import KeypadEasy from '../keypad-easy/dist'
+import KeypadEasy from 'keypad-easy'
 
 class Demo extends React.Component {
   constructor() {
