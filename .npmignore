@@ -3,3 +3,5 @@
 /.DS_Store/
 .editorconfig
 CHANGELOG.md
+webpack.config.js
+.babelrc

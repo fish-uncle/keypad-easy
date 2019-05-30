@@ -9,8 +9,23 @@
   transition: all ease-in-out .3s;
   box-sizing: border-box;
 
+  @media (device-width: 375Px) and (device-height: 812Px) and (-webkit-min-device-pixel-ratio: 3) {
+    //iphone xr
+    .keypad-xr{
+      background-color: rgba(223, 226, 233, 0.90);
+      height: 64px;
+    }
+  }
+  @media (device-width: 414Px) and (device-height: 896Px) and (-webkit-min-device-pixel-ratio: 2) {
+    //iphone x
+    .keypad-xr{
+      background-color: rgba(223, 226, 233, 0.90);
+      height: 64px;
+    }
+  }
+
   &.keypad-hide {
-    transform: translateY(100%);
+    transform: translateY(120%);
     pointer-events: none;
   }
 

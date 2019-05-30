@@ -139,6 +139,7 @@ class KeypadEasy extends Component {
           }
         </Fragment>
       </div>
+      <div className="keypad-xr"/>
     </div>;
   }
 }
