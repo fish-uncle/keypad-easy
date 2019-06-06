@@ -5,3 +5,4 @@
 CHANGELOG.md
 webpack.config.js
 .babelrc
+postcss.config.js
